@@ -1,0 +1,21 @@
+{
+    "articles": [
+        {
+            "title": "前端",
+            "name": "frontend",
+            "groups": [
+                {
+                    "title": "JavaScript",
+                    "name": "javascript",
+                    "children": [
+                        {
+                            "title": "title",
+                            "name": "test",
+                            "id": "1"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
