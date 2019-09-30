@@ -1,12 +1,12 @@
 <template>
-    <div class="c-article">
+    <div class="c-articles">
         article
         <router-view></router-view>
     </div>
 </template>
 <script>
 export default {
-    name: 'Article',
+    name: 'Articles',
     desc: '',
     components: {},
     props: {},

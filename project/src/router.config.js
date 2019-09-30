@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import routeConfig from './router.config.json';
-import Test from './articles/frontend/javascript/test.md';
 
 const loadComponents = (name) => {
 	return r => require.ensure([], () => r(require(`./components/${name}.vue`)));
@@ -9,7 +8,7 @@ const loadComponents = (name) => {
 
 const load = (path) => {
 	console.log(path);
-	return r => require.ensure([], () => r(require(`./articles/${path}.md`)));
+	return r => require.ensure([], () => r(require(`./${path}.md`)));
 };
 
 // groups: folder, children: articles
@@ -53,20 +52,6 @@ const registerRoute = (routeConfig) => {
 };
 
 let routes = registerRoute(routeConfig);
-
-routes = [{
-	path: `/articles`,
-	redirect: `/articles/1`, // TODO
-	component: loadComponents('articles'),
-	children: [{
-		path: '1',
-		name: '1',
-		component: Test,
-		meta: {
-			title: 'test'
-		}
-	}]
-}];
 
 // 设置默认路由
 let defaultPath = '/articles/1';
