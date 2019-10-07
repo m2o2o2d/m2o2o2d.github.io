@@ -1,6 +1,5 @@
 <template>
     <div class="c-articles">
-        article
         <router-view></router-view>
     </div>
 </template>
@@ -22,4 +21,13 @@ export default {
 };
 </script>
 <style lang="less" scoped>
+.c-articles {
+    .content {
+        margin-right: 300px;
+        text-align: left;
+        /deep/h2 {
+            color: @--color-white;
+        }
+    }
+}
 </style>

@@ -17,10 +17,36 @@
 						<span slot="title"><a-icon type="mail" /><span>Git</span></span>
 						<a-menu-item key="3">JS</a-menu-item>
 						<a-menu-item key="4">CSS</a-menu-item>
+						<a-menu-item key="5">JS</a-menu-item>
+						<a-menu-item key="6">CSS</a-menu-item>
+						<a-menu-item key="7">JS</a-menu-item>
+						<a-menu-item key="8">CSS</a-menu-item>
+						<a-menu-item key="9">JS</a-menu-item>
+						<a-menu-item key="10">CSS</a-menu-item>
+						<a-menu-item key="11">JS</a-menu-item>
+						<a-menu-item key="12">CSS</a-menu-item>
+						<a-menu-item key="13">JS</a-menu-item>
+						<a-menu-item key="14">CSS</a-menu-item>
+						<a-menu-item key="15">JS</a-menu-item>
+						<a-menu-item key="16">CSS</a-menu-item>
 					</a-sub-menu>
 				</a-menu>
 			</a-layout-sider>
 			<a-layout>
+				<a-layout-sider :trigger="null" collapside v-model="collapsed">
+					<a-menu @click="handleClick" :defaultSelectedKeys="['1']" :openKeys.sync="openKeys" mode="inline" class="app-menu">
+						<a-sub-menu key="sub1" @titleClick="titleClick">
+							<span slot="title"><a-icon type="mail" /><span>前端</span></span>
+							<a-menu-item key="1">JS</a-menu-item>
+							<a-menu-item key="2">CSS</a-menu-item>
+						</a-sub-menu>
+						<a-sub-menu key="sub2" @titleClick="titleClick">
+							<span slot="title"><a-icon type="mail" /><span>Git</span></span>
+							<a-menu-item key="3">JS</a-menu-item>
+							<a-menu-item key="4">CSS</a-menu-item>
+						</a-sub-menu>
+					</a-menu>
+				</a-layout-sider>
 				<a-layout-content class="app-content">
 					<router-view></router-view>
 				</a-layout-content>
@@ -54,7 +80,6 @@ export default {
 	mounted () {}
 };
 </script>
-
 <style lang="less">
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

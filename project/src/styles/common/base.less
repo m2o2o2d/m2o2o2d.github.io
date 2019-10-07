@@ -1,0 +1,19 @@
+/* Layout
+--------------------------- */
+.scroll-vertical {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Text
+--------------------------- */
+// 文字过长时显示省略符，@row-num：行数，@line-height：行高
+.ellipsisNum (@row-num, @line-height: @--font-line-height-narrow) {
+    line-height: @line-height;
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-line-clamp: @row-num;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: start;
+    overflow: hidden;
+}
