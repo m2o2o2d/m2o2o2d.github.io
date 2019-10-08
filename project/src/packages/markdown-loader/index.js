@@ -36,7 +36,7 @@ const md = require('markdown-it')({
 })
 // 使用table-of-contents插件实现自动生成目录
 .use(toc, {
-    includeLevel: [2, 3]
+    includeLevel: [1, 2, 3]
 })
 // 定义自定义的快容器
 .use(containers);
@@ -55,7 +55,7 @@ module.exports = src => {
     }
 
     const html = md.render(src);
-
+    console.log(src);
     const res = (
         `<template>\n` +
             `<div class="content">${html}</div>\n` +

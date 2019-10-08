@@ -1,6 +1,10 @@
 <template>
     <div class="c-articles scroll-vertical">
         <div class="catalog">目录</div>
+        <div class="header">
+            <div class="title">{{title}}</div>
+            <div class="createTime">{{createTime}} 创建</div>
+        </div>
         <router-view></router-view>
     </div>
 </template>
@@ -14,7 +18,15 @@ export default {
         return {
         };
     },
-    computed: {},
+    computed: {
+        title () {
+            return (this.$route.meta && this.$route.meta.title) || '';
+        },
+        createTime () {
+            const time = this.$route.meta && this.$route.meta.createTime;
+            return time ? this.$moment(time).format('YYYY.MM.DD HH:mm:ss') : '-';
+        }
+    },
     watch: {},
     methods: {},
     created () {},
@@ -23,18 +35,32 @@ export default {
 </script>
 <style lang="less" scoped>
 .c-articles {
+    margin-right: 180px;
+    padding-right: 20px;
+    border-right: @--border-base;
+    .header {
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: @--border-base;
+        text-align: left;
+        .title {
+            font-size: 2.5em;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .createTime {
+            color: @--color-text-secondary;
+        }
+    }
+    .content {
+        text-align: left;
+    }
     .catalog {
         position: fixed;
         right: 166px;
         font-size: 18px;
         font-weight: 500;
         color: @--color-black;
-    }
-    .content {
-        margin-right: 180px;
-        border-right: @--border-base;
-        text-align: left;
-        padding-right: 20px;
     }
     /deep/.table-of-contents {
         position: fixed;

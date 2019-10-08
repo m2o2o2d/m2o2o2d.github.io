@@ -29,7 +29,8 @@ const registerRoute = (routeConfig) => {
 				name: nav.id,
 				component: article,
 				meta: {
-					title: nav.title
+					title: nav.title,
+					createTime: nav.createTime
 				}
 			};
 			routes[index].children.push(route);
