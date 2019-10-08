@@ -1,17 +1,17 @@
 <template>
 	<div id="app">
-		<!-- <div id="nav">
-		<router-link to="/">Home</router-link> |
-		<router-link to="/about">About</router-link>
-		</div>
-		<router-view/> -->
 		<a-layout class="app-layout">
-			<a-layout-sider :trigger="null" collapside v-model="collapsed">
-				<a-menu @click="handleClick" :defaultSelectedKeys="['1']" :openKeys.sync="openKeys" mode="inline" class="app-menu">
+			<a-layout-sider :trigger="null" collapside v-model="groupCollapsed">
+				<a-menu @click="handleClick" :defaultSelectedKeys="['1']" :openKeys.sync="groupOpenKeys" mode="inline" class="app-menu scroll-vertical" theme="dark">
 					<a-sub-menu key="sub1" @titleClick="titleClick">
 						<span slot="title"><a-icon type="mail" /><span>前端</span></span>
 						<a-menu-item key="1">JS</a-menu-item>
 						<a-menu-item key="2">CSS</a-menu-item>
+						<a-sub-menu key="sub3" @titleClick="titleClick">
+							<span slot="title">前端</span>
+							<a-menu-item key="1">JS</a-menu-item>
+							<a-menu-item key="2">CSS</a-menu-item>
+						</a-sub-menu>
 					</a-sub-menu>
 					<a-sub-menu key="sub2" @titleClick="titleClick">
 						<span slot="title"><a-icon type="mail" /><span>Git</span></span>
@@ -31,10 +31,13 @@
 						<a-menu-item key="16">CSS</a-menu-item>
 					</a-sub-menu>
 				</a-menu>
+				<div class="footer-btn">
+					<a-icon :type="groupCollapsed ? 'menu-unfold' : 'menu-fold'" @click="() => groupCollapsed = !groupCollapsed"></a-icon>
+				</div>
 			</a-layout-sider>
 			<a-layout>
-				<a-layout-sider :trigger="null" collapside v-model="collapsed">
-					<a-menu @click="handleClick" :defaultSelectedKeys="['1']" :openKeys.sync="openKeys" mode="inline" class="app-menu">
+				<a-layout-sider :trigger="null" collapside v-model="articleCollapsed" class="sub-sider">
+					<a-menu @click="handleClick" :defaultSelectedKeys="['1']" :openKeys.sync="articleOpenKeys" mode="inline" class="app-menu scroll-vertical">
 						<a-sub-menu key="sub1" @titleClick="titleClick">
 							<span slot="title"><a-icon type="mail" /><span>前端</span></span>
 							<a-menu-item key="1">JS</a-menu-item>
@@ -46,6 +49,9 @@
 							<a-menu-item key="4">CSS</a-menu-item>
 						</a-sub-menu>
 					</a-menu>
+					<div class="footer-btn">
+						<a-icon :type="articleCollapsed ? 'menu-unfold' : 'menu-fold'" @click="() => articleCollapsed = !articleCollapsed"></a-icon>
+					</div>
 				</a-layout-sider>
 				<a-layout-content class="app-content">
 					<router-view></router-view>
@@ -62,8 +68,10 @@ export default {
 	props: {},
 	data () {
 		return {
-			collapsed: false,
-			openKeys: ['sub1']
+			groupCollapsed: false,
+			groupOpenKeys: ['sub1'],
+			articleCollapsed: false,
+			articleOpenKeys: ['sub1']
 		};
 	},
 	computed: {},
@@ -91,13 +99,20 @@ export default {
 }
 .app-layout {
 	height: 100%;
+	.footer-btn {
+		height: 30px;
+		font-size: 18px;
+	}
 	.app-menu {
-		height: 100%;
+		height: calc(~"100% - 30px");
 		text-align: left;
 	}
 	.app-content {
 		background-color: #fff;
 		padding: 24px;
+	}
+	.sub-sider {
+		background: @--color-white;
 	}
 }
 </style>
