@@ -6,9 +6,33 @@
 
 有钱就是可以为所欲为！ :+1:
 
+```js
+const a = 1;
+```
+
+```js
+export default {
+  data () {
+    return {
+      msg: 'Highlighted!'
+    }
+  }
+}
+```
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
 ## 二级标题2
 
 但我特么真的没钱 :cry:
+
+:::tip
+友情提示
+:::
 
 大萨达撒大
 

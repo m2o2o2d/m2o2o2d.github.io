@@ -6,6 +6,7 @@
 					<a-sub-menu key="frontend">
 						<span slot="title"><a-icon type="select"/><span>前端</span></span>
 						<a-menu-item key="javascript">JavaScript</a-menu-item>
+						<a-menu-item key="http">Http</a-menu-item>
 					</a-sub-menu>
 				</a-menu>
 				<div class="footer-btn" @click="() => groupCollapsed = !groupCollapsed">
@@ -40,7 +41,7 @@ export default {
 	props: {},
 	data () {
 		return {
-			groupCollapsed: false,
+			groupCollapsed: true,
 			defaultSelectedKeys: ['javascript'],
 			openKeys: ['frontend'],
 			articleCollapsed: false,

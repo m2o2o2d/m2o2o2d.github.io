@@ -41,7 +41,7 @@ const registerRoute = (routeConfig) => {
 		let navs = routeConfig[kind];
 		routes.push({
 			path: `/${kind}`,
-			redirect: `/${kind}/1`, // TODO
+			// redirect: `/${kind}/1`, // TODO
 			component: loadComponents(`${kind}`),
 			children: []
 		});
@@ -55,7 +55,7 @@ const registerRoute = (routeConfig) => {
 let routes = registerRoute(routeConfig);
 
 // 设置默认路由
-let defaultPath = '/articles/1';
+let defaultPath = '/articles/javascript-1';
 routes = routes.concat([{
     path: '/',
     redirect: defaultPath

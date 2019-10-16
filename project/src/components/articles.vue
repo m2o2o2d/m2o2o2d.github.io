@@ -33,7 +33,7 @@ export default {
     mounted () {}
 };
 </script>
-<style lang="less" scoped>
+<style lang="less">
 .c-articles {
     margin-right: 180px;
     padding-right: 20px;
@@ -43,17 +43,15 @@ export default {
         padding-bottom: 10px;
         border-bottom: @--border-base;
         text-align: left;
+        color: @--color-black;
         .title {
-            font-size: 2.5em;
+            font-size: 2.2em;
             font-weight: 600;
             margin-bottom: 8px;
         }
         .createTime {
             color: @--color-text-secondary;
         }
-    }
-    .content {
-        text-align: left;
     }
     .catalog {
         position: fixed;
@@ -62,16 +60,17 @@ export default {
         font-weight: 500;
         color: @--color-black;
     }
-    /deep/.table-of-contents {
+    .toc {
         position: fixed;
         right: 50px;
         top: 60px;
         width: 150px;
-        font-size: @--font-size-small;
+        font-size: @--font-size-base;
+        padding-left: 16px;
         ul {
             padding-left: 16px;
             list-style-type: initial;
-            line-height: 2;
+            line-height: 1.5;
         }
         a {
             color: @--color-text-primary;
