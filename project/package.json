@@ -14,10 +14,10 @@
     "vue-router": "^3.0.3"
   },
   "devDependencies": {
-    "@vue/babel-preset-app": "^3.11.0",
-    "@vue/cli-plugin-babel": "^3.11.0",
+    "@vue/babel-preset-app": "^5.0.8",
+    "@vue/cli-plugin-babel": "^5.0.8",
     "@vue/cli-plugin-eslint": "^3.11.0",
-    "@vue/cli-service": "^3.11.0",
+    "@vue/cli-service": "^5.0.8",
     "@vue/eslint-config-standard": "^4.0.0",
     "babel-eslint": "^10.0.1",
     "css-loader": "^3.2.0",
